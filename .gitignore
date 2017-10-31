@@ -1,4 +1,6 @@
 .idea
 composer.lock
 *.log
-thinkphp
+system
+application/database.php
+素材
