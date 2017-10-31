@@ -1,0 +1,133 @@
+{include file="common/header" title="易游AV" test='易游AV'/}
+<!-- GALLERY VIDEO GRID BOXED -->
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <!-- VIDEO POSTS -->
+            <div class="col-lg-12 col-md-12">
+                <!-- GALLERY VIDEO GRID SECTION -->
+                <section id="gallery-video-section">
+                    <div class="row">
+                        <!-- RELATED VIDEOS -->
+                        <div class="col-lg-12 col-md-12 col-sm-12 category-video-grid video-info dropshd">
+                            <h2 class="icon"><i class="fa fa-search" aria-hidden="true"></i>播放列表</h2>
+                            <!-- VIDEO POSTS ROW -->
+                            <div class="filter-box">
+                                <button class="btn btn-default filter-button active" data-filter="all">所有</button>
+                                <button class="btn btn-default filter-button" data-filter="tutorial">最热</button>
+                                <button class="btn btn-default filter-button" data-filter="html">最新</button>
+                                <!--
+                                <button class="btn btn-default filter-button" data-filter="css">1</button>
+                                <button class="btn btn-default filter-button" data-filter="jquery">2</button>
+                                -->
+                            </div>
+                            <!-- VIDEO POSTS ROW -->
+                            <div class="row clear-auto">
+                                <div class="col-lg-2 col-md-6 col-sm-4 filter css">
+                                    <!-- POST L size -->
+                                    <div class="post post-medium">
+                                        <div class="thumbr">
+                                            <a class="post-thumb" href="" data-lity>
+                                                <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
+                                                <div class="cactus-note ct-time font-size-1"><span>02:02</span></div>
+                                                <img class="img-responsive" src="__INDEX_IMG__/thumbs/thumb-s.jpg" alt="#">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-4 filter css">
+                                    <!-- POST L size -->
+                                    <div class="post post-medium">
+                                        <div class="thumbr">
+                                            <a class="post-thumb" href="" data-lity>
+                                                <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
+                                                <div class="cactus-note ct-time font-size-1"><span>02:02</span></div>
+                                                <img class="img-responsive" src="__INDEX_IMG__/thumbs/thumb-s.jpg" alt="#">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-4 filter jquery">
+                                    <!-- POST L size -->
+                                    <div class="post post-medium">
+                                        <div class="thumbr">
+                                            <a class="post-thumb" href="" data-lity>
+                                                <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
+                                                <div class="cactus-note ct-time font-size-1"><span>02:02</span></div>
+                                                <img class="img-responsive" src="__INDEX_IMG__/thumbs/thumb-s.jpg" alt="#">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-4 filter tutorial">
+                                    <!-- POST L size -->
+                                    <div class="post post-medium">
+                                        <div class="thumbr">
+                                            <a class="post-thumb" href="" data-lity>
+                                                <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
+                                                <div class="cactus-note ct-time font-size-1"><span>02:02</span></div>
+                                                <img class="img-responsive" src="__INDEX_IMG__/thumbs/thumb-s.jpg" alt="#">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-4 filter css">
+                                    <!-- POST L size -->
+                                    <div class="post post-medium">
+                                        <div class="thumbr">
+                                            <a class="post-thumb" href="" data-lity>
+                                                <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
+                                                <div class="cactus-note ct-time font-size-1"><span>02:02</span></div>
+                                                <img class="img-responsive" src="__INDEX_IMG__/thumbs/thumb-s.jpg" alt="#">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-6 col-sm-4">
+                                    <!-- POST L size -->
+                                    <div class="post post-medium">
+                                        <div class="thumbr">
+                                            <a class="post-thumb" href="" data-lity>
+                                                <span class="play-btn-border" title="Play"><i class="fa fa-play-circle headline-round" aria-hidden="true"></i></span>
+                                                <div class="cactus-note ct-time font-size-1"><span>02:02</span></div>
+                                                <img class="img-responsive" src="__INDEX_IMG__/thumbs/thumb-s.jpg" alt="#">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix spacer"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{include file="common/footer"/}
+<script>
+    $(".nav .dropdown").hover(function() {
+        $(this).find(".dropdown-toggle").dropdown("toggle");
+    });
+    $(document).ready(function(){
+        $(".filter-button").click(function(){
+            var value = $(this).attr('data-filter');
+
+            if(value == "all")
+            {
+                //$('.filter').removeClass('hidden');
+                $('.filter').show('1000');
+            }
+            else
+            {
+                //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                $(".filter").not('.'+value).hide('3000');
+                $('.filter').filter('.'+value).show('3000');
+
+            }
+        });
+
+    });
+</script>
