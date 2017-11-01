@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\Program Files\WWW\av_movie\public/../application/index\view\index\index.html";i:1509185765;s:81:"D:\Program Files\WWW\av_movie\public/../application/index\view\common\header.html";i:1509101078;s:81:"D:\Program Files\WWW\av_movie\public/../application/index\view\common\footer.html";i:1509100946;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"D:\Program Files\WWW\av_movie\public/../application/index\view\index\index.html";i:1509532984;s:81:"D:\Program Files\WWW\av_movie\public/../application/index\view\common\header.html";i:1509533626;s:81:"D:\Program Files\WWW\av_movie\public/../application/index\view\common\footer.html";i:1509533764;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title><?php echo $title; ?></title>
     <!-- Bootstrap core CSS -->
-    <link href="__INDEX_CSS__/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__INDEX_CSS__/bootstrap.css" />
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="__INDEX_CSS__/screen.css">
-    <link rel="stylesheet" href="__INDEX_CSS__/animation.css">
+    <link rel="stylesheet" type="text/css" href="__INDEX_CSS__/screen.css" />
+    <link rel="stylesheet" type="text/css" href="__INDEX_CSS__/animation.css" />
     <!--[if IE 7]>
 
     <![endif]-->
-    <link rel="stylesheet" href="__INDEX_CSS__/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="__INDEX_CSS__/font-awesome.css" />
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="__INDEX_CSS__/ie.css" type="text/css" media="screen, projection">
     <![endif]-->
-    <link href="__INDEX_CSS__/frank.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__INDEX_CSS__/frank.min.css" />
 </head>
 <body>
 <!-- HOME 1 -->
@@ -35,7 +35,13 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-7 hidden-xs">
             <div class="right-box">
-                <button type="button" class="access-btn" data-toggle="modal" data-target="#enquirypopup">登入</button>
+                <?php if($data["user_id"] > '0'): ?>
+                    当前用户：<?php echo $data['user_name']; ?>
+                    &nbsp;&nbsp;<a type="button" class="" href="<?php echo url('index/UserInfo/logout'); ?>">退出</a>
+                <?php else: ?>
+                    <button type="button" class="access-btn" data-toggle="modal" data-target="#enquirypopup">登入</button>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>
@@ -82,6 +88,7 @@
                             <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                 <article class="col-lg-3 col-md-6 col-sm-4">
                                     <!-- POST L size -->
+
                                     <div class="post post-medium">
                                         <div class="thumbr">
                                             <a class="afterglow post-thumb" href="<?php echo $vo['vod_url']; ?>" data-lity="">
@@ -727,9 +734,9 @@
 </div>
 <!-- JAVA SCRIPT -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="__INDEX_JS__/jquery-1.12.1.min.js"></script>
-<script src="__INDEX_JS__/bootstrap.min.js"></script>
-<script src="__INDEX_JS__/frank.min.js"></script>
+<script type="text/javascript" src="__INDEX_JS__/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="__INDEX_JS__/bootstrap.min.js"></script>
+<script type="text/javascript" src="__INDEX_JS__/frank.min.js"></script>
 <script>
     $(".nav .dropdown").hover(function() {
         $(this).find(".dropdown-toggle").dropdown("toggle");
@@ -745,12 +752,12 @@
                 <h2 class="icon"><i class="fa fa-television" aria-hidden="true"></i>用户登入</h2>
             </div>
             <div class="modal-body">
-                <form name="info_form" class="form-inline" action="#" method="post">
+                <form name="info_form" class="form-inline" action="<?php echo url('index/UserInfo/login'); ?>" method="post">
                     <div class="form-group col-sm-12">
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+                        <input type="text" name="user_name" id="user_name" placeholder="输入用户名"  value="">
                     </div>
                     <div class="form-group col-sm-12">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+                        <input type="password"  name="user_password" id="user_password" placeholder="输入密码" value="">
                     </div>
                     <div class="form-group col-sm-12">
                         <button class="subscribe-btn pull-right" type="submit" title="Subscribe">提交</button>

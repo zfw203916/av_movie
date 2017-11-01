@@ -11,6 +11,8 @@ use think\Controller;
 class Base extends Controller
 {
     protected function _initialize(){
+        session_start();
+        //Session::init();
         $this->assign([
             'title'=>'易游AV',
             'v_alt'=>'AV'

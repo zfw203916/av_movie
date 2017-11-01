@@ -8,18 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title>{$title}</title>
     <!-- Bootstrap core CSS -->
-    <link href="__INDEX_CSS__/bootstrap.css" rel="stylesheet">
+    {css href="__INDEX_CSS__/bootstrap.css" /}
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="__INDEX_CSS__/screen.css">
-    <link rel="stylesheet" href="__INDEX_CSS__/animation.css">
+    {css href="__INDEX_CSS__/screen.css" /}
+    {css href="__INDEX_CSS__/animation.css" /}
     <!--[if IE 7]>
 
     <![endif]-->
-    <link rel="stylesheet" href="__INDEX_CSS__/font-awesome.css">
+    {css href="__INDEX_CSS__/font-awesome.css" /}
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="__INDEX_CSS__/ie.css" type="text/css" media="screen, projection">
     <![endif]-->
-    <link href="__INDEX_CSS__/frank.min.css" rel="stylesheet">
+    {css href="__INDEX_CSS__/frank.min.css" /}
 </head>
 <body>
 <!-- HOME 1 -->
@@ -34,7 +34,13 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-7 hidden-xs">
             <div class="right-box">
-                <button type="button" class="access-btn" data-toggle="modal" data-target="#enquirypopup">登入</button>
+                {gt name = 'data["user_id"]' value = "0"}
+                    当前用户：{$data.user_name}
+                    &nbsp;&nbsp;<a type="button" class="" href="{:url('index/UserInfo/logout')}">退出</a>
+                {else/}
+                    <button type="button" class="access-btn" data-toggle="modal" data-target="#enquirypopup">登入</button>
+                {/gt}
+
             </div>
         </div>
     </div>

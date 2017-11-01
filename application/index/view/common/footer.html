@@ -104,9 +104,9 @@
 </div>
 <!-- JAVA SCRIPT -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="__INDEX_JS__/jquery-1.12.1.min.js"></script>
-<script src="__INDEX_JS__/bootstrap.min.js"></script>
-<script src="__INDEX_JS__/frank.min.js"></script>
+{js href="__INDEX_JS__/jquery-1.12.1.min.js"}
+{js href="__INDEX_JS__/bootstrap.min.js"}
+{js href="__INDEX_JS__/frank.min.js"}
 <script>
     $(".nav .dropdown").hover(function() {
         $(this).find(".dropdown-toggle").dropdown("toggle");
@@ -122,12 +122,12 @@
                 <h2 class="icon"><i class="fa fa-television" aria-hidden="true"></i>用户登入</h2>
             </div>
             <div class="modal-body">
-                <form name="info_form" class="form-inline" action="#" method="post">
+                <form name="info_form" class="form-inline" action="{:url('index/UserInfo/login')}" method="post">
                     <div class="form-group col-sm-12">
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+                        <input type="text" name="user_name" id="user_name" placeholder="输入用户名"  value="">
                     </div>
                     <div class="form-group col-sm-12">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+                        <input type="password"  name="user_password" id="user_password" placeholder="输入密码" value="">
                     </div>
                     <div class="form-group col-sm-12">
                         <button class="subscribe-btn pull-right" type="submit" title="Subscribe">提交</button>

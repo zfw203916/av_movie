@@ -10,5 +10,7 @@ namespace app\index\controller;
 use app\common\controller\Index;
 class MonBaseController extends Index
 {
-
+    protected function index(){
+        echo "test";
+    }
 }

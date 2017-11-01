@@ -10,5 +10,5 @@ namespace app\index\model;
 
 class User extends MonBase
 {
-    protected $table = 'mon_user';
+    protected $table = 'mon_user_info';
 }
